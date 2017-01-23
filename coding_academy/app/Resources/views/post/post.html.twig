@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="post">
+     <p><a href="{{path('post_post', {'id': post.id}) }}">{{ post.title }}</a> {{ post.created|date('Y-m-d H:i:s') }} by </p>
+     <a href="{{path('post_show', {'id': post.id}) }}"> {{post.user.username}} </a>
+     <p> {{ post.content }} </p>
+</div>
+{% endblock %}
